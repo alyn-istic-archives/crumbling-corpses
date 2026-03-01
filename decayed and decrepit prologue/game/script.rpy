@@ -5,6 +5,7 @@
 
 define j = Character("Jason")
 define dis = Dissolve(0.1)
+define v = Character("Valerie")
 
 
 default preferences.text_cps = 45
@@ -57,7 +58,8 @@ label start:
         "Oh. {w=5}Fuck. {w=5}Nah."
         "THERE'S NO FUCKING FOOD." with vpunch
         "{cps=20}NOOOOOOOO." with pixellate
-        "Violet turns to me with clear disdain and confusion in her eyes for my sudden misery."
+        "Valerie turns to me with clear disdain and confusion in her eyes for my sudden misery."
+        show v_open with dis
         v "...{w} Are you okay?"
         
     # This ends the game.
