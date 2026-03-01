@@ -4,7 +4,11 @@
 # name of the character.
 
 define j = Character("Jason")
+define dis = Dissolve(0.1)
 
+
+default preferences.text_cps = 45
+default preferences.afm_enable = False 
 
 # The game starts here.
 
@@ -23,12 +27,39 @@ label start:
     # These display lines of dialogue.
 
     "I'm -REDACTED-, and we're so fucking cooked."
-    show j_closed
+    show j_closed with dis
     pause.01
     "And I fucking hate Jason."
-    hide j_closed
-    show j_open with Dissolve(0.5)
+    show j_open with dis
     j "Fuck off."
+    show j_closed with dis
+    pause.025
+    "See why I hate him?"
+    hide j_closed with dis
+    "It's been what... like a month into this whole 'living underground in a bunker' thing."
+    "Would you believe how ordinary our lives were before we got here?"
+    "Well, now, we're here. In this subpar bunker, surrounded by pretentious assholes and rates."
+    show j_closed with dis
+    pause.025
+    "But Jason's really both."
+    
+    "And it's my turn to make dinner, so I head to the fridge."
+    scene bg fridge with dis
+    "what should I make?"
+    menu:
+        "a sandwich!!":
+            jump fridge
+        "soup.":
+            jump fridge
+        "pizzaaa":
+            jump fridge
+    label fridge:
+        "Oh. {w=5}Fuck. {w=5}Nah."
+        "THERE'S NO FUCKING FOOD." with vpunch
+        "{cps=20}NOOOOOOOO." with pixellate
+        "Violet turns to me with clear disdain and confusion in her eyes for my sudden misery."
+        v "...{w} Are you okay?"
+        
     # This ends the game.
 
     return
