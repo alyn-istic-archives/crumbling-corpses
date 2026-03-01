@@ -7,6 +7,13 @@ define j = Character("Jason")
 define dis = Dissolve(0.1)
 define v = Character("Valerie")
 
+image fridgean:
+    "images/f1.png"
+    pause.3
+    "images/f2.png"
+    pause.2
+    "images/f3.png"
+    pause.2
 
 default preferences.text_cps = 45
 default preferences.afm_enable = False 
@@ -45,7 +52,7 @@ label start:
     "But Jason's really both."
     
     "And it's my turn to make dinner, so I head to the fridge."
-    scene bg fridge with dis
+    scene fridge with dis
     "what should I make?"
     menu:
         "a sandwich!!":
@@ -55,6 +62,7 @@ label start:
         "pizzaaa":
             jump fridge
     label fridge:
+        show fridgean with dis
         "Oh. {w=5}Fuck. {w=5}Nah."
         "THERE'S NO FUCKING FOOD." with vpunch
         "{cps=20}NOOOOOOOO." with pixellate
