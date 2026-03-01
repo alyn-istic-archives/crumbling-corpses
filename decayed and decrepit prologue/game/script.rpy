@@ -30,31 +30,36 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg bunker
+    scene bg bunker with Dissolve(0.5)
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
     # These display lines of dialogue.
-
-    "I'm -REDACTED-, and we're so fucking cooked."
+    play sound "audio/we're cuit.mp3"
+    "My name's -REDACTED-, and we're {b}so{/b} cooked."
     show j_closed with dis
     pause.01
-    "And I fucking hate Jason."
+    play sound "audio/jasonpmo.mp3"
+    "And I hate Jason."
     show j_open with dis
     hide j_closed with dis
     j "Screw off."
+    hide j_open with dis
     show j_closed with dis
     pause.025
     "See why I hate him?"
     hide j_closed with dis
     "It's been what... like a month into this whole 'living underground in a bunker' thing."
-    "Would you believe how ordinary our lives were before we got here?"
+    "Would you believe how ordinary our lives were before things went south?"
+    "And by south, I mean pretty bad considering... y'know... zombie apocalypse."
+    play sound "audio/assholebunker.mp3"
     "Well, now, we're here. In this subpar bunker, surrounded by pretentious assholes and nosy rats."
     show j_closed with dis
     pause.025
-    "But Jason's really both."
+    play sound "audio/jasonrat.mp3"
+    "But Jason's really just both."
     
     "And it's my turn to make dinner, so I head to the fridge."
     "Out of hunger portable food."
@@ -69,10 +74,10 @@ label start:
             jump fridge
     label fridge:
         show fridgean with dis
-        "Oh. {w=5}Fuck. {w=5}Nah."
-        "THERE'S NO FUCKING FOOD." with vpunch
+        "Oh. {w=5}Hell. {w=5}Nah."
+        "THERE'S NO FOOD." with vpunch
         "{cps=20}NOOOOOOOO." with pixellate
-        scene bg fridge with dis
+        scene fridge with dis
         "Valerie turns to me with clear disdain and confusion in her eyes for my sudden misery."
         show v_open with dis
         v "...{w} Are you okay?"
@@ -84,7 +89,7 @@ label start:
         v "Damn, calm down."
         v "It is not that bad, I'm sure."
         "But it is."
-        scene bg bunker with Dissolve(0.5)
+        scene bg bunker with Dissolve(0.75)
         "Or it was."
         n1 "WE'RE OUT OF FOOD ???? NOOOOOO-"
         n2 "THIS CANNOT STAND WE NEED TO EATT"
@@ -98,10 +103,16 @@ label start:
         show imcooked with zoomin
         "what the fuh."
         "Yeah. {w} That's me. In the ugly hoodie."
-        "I OF ALL PEOPLE,{w} have been paired with Valerie to go for FOOD FOR SURVIVAL."
+        "I, OF ALL PEOPLE,{w} have been paired with Valerie to go for FOOD FOR SURVIVAL."
         "WORST OF ALL."
         pause.1
+        show trio with zoomout
         "WITH JASON."
+        "..."
+        scene bunkergrowth with Dissolve(0.5)
+        "And so I set forth into the perilous journey of scaling the bunker with Valerie."
+        "...{w} and Jason."
+        
         
         
         
