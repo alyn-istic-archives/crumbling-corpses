@@ -19,6 +19,22 @@ image fridgean:
     "images/f3.png"
     pause.5
 
+transform jump:
+    pause .15
+    yoffset 0
+    easein .15 yoffset -10
+    easeout .15 yoffset 0
+    easein .15 yoffset -2
+    easeout .15 yoffset 0
+    yoffset 0
+
+transform shake:
+    linear 0.175 xoffset -5
+    linear 0.175 xoffset +0
+    linear 0.175 yoffset -5
+    linear 0.175 yoffset +0
+    repeat
+
 default preferences.text_cps = 45
 default preferences.afm_enable = False 
 
@@ -30,6 +46,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
+    jump explore
     scene bg bunker with Dissolve(0.5)
 
     # This shows a character sprite. A placeholder is used, but you can
@@ -109,9 +126,41 @@ label start:
         show trio with zoomout
         "WITH JASON."
         "..."
+    label explore:
         scene bunkergrowth with Dissolve(0.5)
+        show v_closed at right with dis
         "And so I set forth into the perilous journey of scaling the bunker with Valerie."
+        show j_closed at left with dis
         "...{w} and Jason."
+        "..."
+        "HOLY SHIT IS THAT A ZOMBIE-" with vpunch
+        hide j_closed
+        show j_open at shake
+        j "You guys see that, right..."
+        show j_closed
+        hide j_open
+        show v_open at right
+        v "...I do."
+        hide v_open
+        show v_closed
+        yn "OH MY GOD KILL IT VRO PLEASE"
+        hide j_closed
+        show j_open
+        j "WHO ME ??" with vpunch
+        show j_closed
+        hide j_open
+        yn "YES YOU !! DID THEY NOT GIVE U A WEAPON OR SOMETHING?!"
+        show j_open
+        hide j_closed
+        j "uh." with vpunch
+        show j_closed
+        hide j_open
+        show v_open
+        hide v_closed
+        v "What do you mean 'uh', Jason?"
+        pause.1
+        v "I'll just do it myself."
+        "With almost efficient speed, she drops into a quick stance, easily piercing through the zombie. "
         
         
         
