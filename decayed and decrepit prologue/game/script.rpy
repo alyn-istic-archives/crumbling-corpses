@@ -6,14 +6,18 @@
 define j = Character("Jason")
 define dis = Dissolve(0.1)
 define v = Character("Valerie")
+define yn = Character("me")
+define n1 = Character("NPC 1")
+define n2 = Character("NPC 2")
+define n3 = Character("NPC 3")
 
 image fridgean:
     "images/f1.png"
-    pause.3
+    pause.5
     "images/f2.png"
-    pause.2
+    pause.5
     "images/f3.png"
-    pause.2
+    pause.5
 
 default preferences.text_cps = 45
 default preferences.afm_enable = False 
@@ -39,19 +43,21 @@ label start:
     pause.01
     "And I fucking hate Jason."
     show j_open with dis
-    j "Fuck off."
+    hide j_closed with dis
+    j "Screw off."
     show j_closed with dis
     pause.025
     "See why I hate him?"
     hide j_closed with dis
     "It's been what... like a month into this whole 'living underground in a bunker' thing."
     "Would you believe how ordinary our lives were before we got here?"
-    "Well, now, we're here. In this subpar bunker, surrounded by pretentious assholes and rates."
+    "Well, now, we're here. In this subpar bunker, surrounded by pretentious assholes and nosy rats."
     show j_closed with dis
     pause.025
     "But Jason's really both."
     
     "And it's my turn to make dinner, so I head to the fridge."
+    "Out of hunger portable food."
     scene fridge with dis
     "what should I make?"
     menu:
@@ -66,9 +72,38 @@ label start:
         "Oh. {w=5}Fuck. {w=5}Nah."
         "THERE'S NO FUCKING FOOD." with vpunch
         "{cps=20}NOOOOOOOO." with pixellate
+        scene bg fridge with dis
         "Valerie turns to me with clear disdain and confusion in her eyes for my sudden misery."
         show v_open with dis
         v "...{w} Are you okay?"
+        show v_closed with dis
+        hide v_open with dis
+        yn "Of COURSE !!! {w} NOT, Valerie. {w} OBVIOUSLY."
+        show v_open with dis
+        hide v_closed with dis
+        v "Damn, calm down."
+        v "It is not that bad, I'm sure."
+        "But it is."
+        scene bg bunker with Dissolve(0.5)
+        "Or it was."
+        n1 "WE'RE OUT OF FOOD ???? NOOOOOO-"
+        n2 "THIS CANNOT STAND WE NEED TO EATT"
+        yn "I'M WELL AWARE AHHHH !!!"
+        n3 "THAT'S IT, WE'RE INITIATING GREEN PROTOCOL"
+        pause.1
+        "WHAT."
+        play audio "audio/sum.mp3"
+        show trio with dis
+        "what the."
+        show imcooked with zoomin
+        "what the fuh."
+        "Yeah. {w} That's me. In the ugly hoodie."
+        "I OF ALL PEOPLE,{w} have been paired with Valerie to go for FOOD FOR SURVIVAL."
+        "WORST OF ALL."
+        pause.1
+        "WITH JASON."
+        
+        
         
     # This ends the game.
 
